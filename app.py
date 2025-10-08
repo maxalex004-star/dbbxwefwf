@@ -5,6 +5,10 @@ import os
 
 app = Flask(__name__)
 
+@app.route('/', methods=['GET'])
+def home():
+    return "Flask API is running. Use POST /predict to get predictions."
+
 @app.route('/predict', methods=['POST'])
 def predict():
     try:
